@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Palindrome Checker App by Kamal Sir</title>
+		<style>
+			*{font-size:40px;}
+			body{background-color:azure;}
+		</style>
+	</head>
+
+	<body>
+		<center>
+			<h1>Plaindrome Checker</h1>
+			<form onsubmit="check()">
+			<input type="text" id="str" placeholder="Enter String"/>
+				<br><br>
+			<input type="submit" value="Check"/>
+			</form>
+				<h2 id="msg"/>
+			
+			<script>
+				function check()
+				{
+					event.preventDefault();
+					let str = document.getElementById("str");
+					let msg = document.getElementById("msg");
+				
+					if (str.value === "")
+					{
+						alert("please enter string");
+						msg.innerHTML="";
+						str.focus();
+						return;
+					}
+					
+					let s = str.value;
+					let r = s.split("").reverse().join("");
+					let a = "";
+
+					if(s===r)
+						a = "Yes it is a palindrome";
+					else
+						a = "No it is not a palindrome"
+					msg.innerHTML= a;
+				}
+			</script>
+		</center>
+	</body>
+</html>
